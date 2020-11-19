@@ -27,6 +27,7 @@ function Row({title, fetchUrl, isLargeRow}) {
         height: "390",
         width: "100%",
         playerVars: {
+            //https://developers.google.com/youtube/player_parameters
             autoplay: 1,
         },
     };
@@ -38,6 +39,7 @@ function Row({title, fetchUrl, isLargeRow}) {
         else {
             movieTrailer(movie?.name || "")
             .then((url) => {
+                //https://www.youtube.com/watch?v=2F90x5O0wxw
                 const urlParams = new URLSearchParams(new URL(url).search);
                 setTrailerUrl(urlParams.get("v"))
             })
